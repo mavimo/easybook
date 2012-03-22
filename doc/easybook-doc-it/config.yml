@@ -1,0 +1,55 @@
+book:
+    title:            documentazione di easybook
+    author:           Javier Eguiluz
+    edition:          Prima edizione
+    language:         it
+    publication_date: ~
+
+    generator: { name: easybook, version: 4.2 }
+
+    contents:
+        - { element: cover }
+        - { element: toc   }
+        - { element: chapter, number: 1, content: chapter1.md }
+        - { element: chapter, number: 2, content: chapter2.md }
+        - { element: chapter, number: 3, content: chapter3.md }
+
+    editions:
+        ebook:
+            format:         epub
+            include_styles: true
+            highlight_code: true
+            labels:         ['appendix', 'chapter', 'figure']
+            toc:
+                deep:       1
+                elements:   ["appendix", "chapter"]
+
+        print:
+            format:         pdf
+            highlight_code: true
+            isbn:           ~
+            include_styles: true
+            labels:         ['appendix', 'chapter', 'figure']
+            margin:
+                top:        25mm
+                bottom:     25mm
+                inner:      30mm
+                outter:     20mm
+            page_size:      A4
+            toc:
+                deep:       2
+                elements:   ["appendix", "chapter"]
+            two_sided:      true
+
+        web:
+            format:         html
+            include_styles: true
+            highlight_code: true
+            labels:         ['appendix', 'chapter', 'figure']
+            toc:
+                deep:       2
+                elements:   ["appendix", "chapter"]
+
+        website:
+            extends:        web
+            format:         html_chunked
