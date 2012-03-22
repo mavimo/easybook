@@ -20,41 +20,41 @@ MIT. Questo significa che potete farci qualsiasi cosa. La sola condizione è
 che manteniate il file `LICENSE.md` incluso nel codice sorgente. Questo dile
 spiega la licenza di **easybook** e i suoi autori originali.
 
-In any case, you are the sole proprietor of the books published with
-**easybook**, including all the copyright and related rights applicable in
-your country of residence. You are not obliged to share these works in any
-way, even if you benefit from them financially.
+In ogni caso voi siete i soli proprietari dei libri pubblicati con **easybook*,
+inclusi tutti i diritti d'autore e correlati appplicati nel vostro stato di
+residenza. NOn siete obbligati a condiviere questi lavori in nessuna forma,
+anche se ne otterrete un beneficio economico.
 
-## Downloading easybook ##
+## Scaricare easybook ##
 
-Before downloading **easybook**, create a directory for it. For example:
+Prima di scaricare **easybook**, create una directory. Per esempio:
 
-  * On Windows: `C:\Users\javier\projects\easybook`
-  * On Mac OS X: `/Users/javier/projects/easybook`
-  * On Linux: `/home/javier/projects/easybook`
+  * Su Windows: `C:\Users\javier\projects\easybook`
+  * Su Mac OS X: `/Users/javier/projects/easybook`
+  * Su Linux: `/home/javier/projects/easybook`
 
-If you have Git installed on your computer, you should download  **easybook**
-cloning its public repository with the following command (replace `<dir>` for
-the path of the directory created previously):
+Se avete Git installato sul vostro computer, potete scaricare **easybook**
+clonando il repository pubblico con i seguenti comandi (sostituite `<dir>` con
+il percorso della cartella creata precedentemente):
 
     [cli]
     $ git clone http://github.com/javiereguiluz/easybook.git <dir>
 
-If you don't use Git, you can download **easybook** as a compressed `.zip`
-archive. It's not as cool as using Git, but it works fine. Download the
-following file and uncompress it on the previously created directory:
+Se non usate Git, potete scaricare **easybook** in un file compresso `.zip`.
+Non è innovativo come usare Git, ma funziona bene. Scaricate il seguente file
+e decomprimetelo nella cartella creata precedentemente:
 <http://github.com/javiereguiluz/easybook/zipball/master>
 
-### Using easybook ###
+### Usare easybook ###
 
-Once downloaded/unzipped, open a command console and run the following PHP
-script to check that you have downloaded **easybook** correctly:
+Una volta scaricato/decompresso, aprite un terminale ed eseguite il seguente
+script PHP per controllare di avere scaricato **easybook** correttamente:
 
     [cli]
     $ ./book
 
-If everything is fine, **easybook** should welcome you with the following
-message:
+Se tutto è a posto, **easybook** vi darà il benvenuto con il seguente
+messaggio:
 
     [cli]
                         |              |
@@ -73,13 +73,10 @@ message:
       publish   Publishes an edition of a book
       version   Shows installed easybook version
 
-If you find any issue running `./book` script, try running it as `php book`.
-If you still find any issues, check the permissions of the `book` script. If
-everything fails, ask again advice from your computer savvy friends.
+Se rilevate qualche problema nell'eseguire lo script `./book`, provate eseguendolo come `php book`. Se continuate ad avere problemi controllate i permessi dello script `book`. Se tutte le operazioni sopra indicate non risolvono il problema, chiedete ancora al vostro amico esperto di computer.
 
-The `./book` script is the unique *entry point* for every **easybook**
-command. If you need to know for example the installed version, just run the
-`version` command through `book` script:
+Lo script `./book` è l'unico *punto di ingresso* per ogni comando di
+**easybook**. Se vi serve saapere la versione installata, ad esempio, dovete semplcemente eseguire il comando `version` attraverso lo script `book`:
 
     [cli]
     $ ./book version
