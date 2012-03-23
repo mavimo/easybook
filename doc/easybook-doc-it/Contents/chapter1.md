@@ -137,26 +137,26 @@ Queste sono i file e le cartelle create da **easybook**:
   * `Output/`, inizialmente questa cartella è vuota, ma conterrà il libro
     pubblicato.
 
-## Writing the book ##
+## Scrivere il libro ##
 
-Book contents are written in regular text archives using Markdown syntax.
-This format has become the *de facto* standard for writing documentation for
-Internet. If you are not familiar with Markdown syntax, read the [official
-Markdown syntax reference](http://daringfireball.net/projects/markdown/syntax)
-. Markdown is the only format currently supported by **easybook**. In the
-future, many more formats will be supported, such as reStructuredText,
-Textile and other widely used formats.
+I contenuti del libro sono scritti in file di testo usando la sintassi
+Markdown. Questo formato è diventato lo standard *de facto* per la scrittura
+di documentazione per Internet. Se non avete familiarità con la sintassi
+Markdown, leggete le [specifiche ufficiali della sintassi Markdown](http://daringfireball.net/projects/markdown/syntax).
+Markdown è l'unico formato attualmente supportato da **easybook**. In futuro
+alcuni altri formati verranno supportati, quali reStructuredText, Textile ed
+altri formati meno usati.
 
-Therefore, forget **easybook** for a while and write the contents of your
-book in Markdown syntax using your favorite text editor (`vi`, *Notepad*,
-*TextMate*, *SublimeText*, etc.)
+Ora, dimenticatevi **easybook** per un attimo, e scrivete i contenuti del
+vosrto libro in Markdown usando il vostro editor di testo preferito (`vi`,
+*Notepad*, *TextMate*, *SublimeText*, etc.).
 
-The structure of a book can be very complex (cover, title page,
-acknowledgements, dedication, chapters, parts, etc.). **easybook** supports
-all the common book content types, but for now, we'll just focus on the
-chapters. You can add as many chapters as you want and each one can be as
-large or as short as you need. All you have to do is to list the book
-chapters under the `contents` option of the `config.yml` file:
+La struttura di un libro piò essere veramente complessa (copertina, pagina con
+titolo, dediche, capitoli, sezioni, ...). **easybook** supporta tutti i tipi
+comuni di libro, ma per ora, ci focalizzeremo sui capitoli. Potete aggiungere
+tutti i capitoli che desiderate ed ognuno può essere lungo o corto quanto
+desiderate. Tutto quello che dovete fare è elencare tutti i capitoli
+nell'opzione `contents` del file `config.yml`:
 
     [yaml]
     book:
@@ -167,16 +167,16 @@ chapters under the `contents` option of the `config.yml` file:
             - { element: chapter, number: 1, content: chapter1.md }
             - { element: chapter, number: 2, content: chapter2.md }
 
-Each line under the `contents` option defines a content of the book. The
-`cover` and `toc` lines are special contents that will be explained later.
-Add your book chapters as  `chapter` elements and set their number (with the
-`number` option) and the name of the files that hold their contents (with the
-`content` option).
+Ogni linea successiva all'opzione `contents` definisce un contenuto del libro.
+Le linee `cover` e `toc` sono contenuti speciali che spiegheremo
+successivamente. Aggiungete i capitoli del vostro libro con elementi
+`chapter`, indicate la loro numerazione (con l'opzione `number`) e il nome dei
+file che li contengono (con l'opzione  `content`).
 
-Besides being lightning-fast, the main feature of **easybook** is its
-flexibility, as it never forces you to work in a certain way. Do you want to
-number your chapters in an *imaginative* way? People will think you're crazy,
-but **easybook** allows you to do it:
+Oltre all'estrema leggerezza, la caratteristica principale di **easybook** è
+la sua flessibilità, che non vi forzerà mai a lavorare in un certo modo.
+Volete numerare i capitoli in una maniera *atipica*? Le persone penseranno che
+siete dei pazzi, ma **easybook** vi consentirà di farlo;
 
     [yaml]
     book:
@@ -187,8 +187,8 @@ but **easybook** allows you to do it:
             - { element: chapter, number: 100, content: chapter1.md }
             - { element: chapter, number: 56,  content: chapter2.md }
 
-Do you need letters instead of numbers? This is usual for appendices instead
-of chapters, but **easybook** won't stop you from doing it:
+Volete utilizzare lettere al posto di numeri? Questoè abbastanza usuale per le
+appendici e non per i capitoli, ma **easybook** non vi impiedirà di farlo:
 
     [yaml]
     book:
@@ -199,8 +199,8 @@ of chapters, but **easybook** won't stop you from doing it:
             - { element: chapter, number: A, content: chapter1.md }
             - { element: chapter, number: B, content: chapter2.md }
 
-You can also use any name for the chapter contents file, as in the following
-example that mixes English and Spanish:
+Potete anche usare qualsiasi nome per i file che conterranno i capitoli, come
+nell'esempio seguente che mischia inglese e spagnolo:
 
     [yaml]
     book:
@@ -211,7 +211,8 @@ example that mixes English and Spanish:
             - { element: chapter, number: 1, content: chapter1.md }
             - { element: chapter, number: 2, content: capitulo2.md }
 
-Using significant names for book content files eases its management:
+Usare nome significativi per i file dei contenuti del libro rendono più
+falicle la loro gestione:
 
     [yaml]
     book:
@@ -222,12 +223,11 @@ Using significant names for book content files eases its management:
             - { element: chapter, number: 1, content: publishing-your-first-book.md }
             - { element: chapter, number: 2, content: publishing-your-second-book.md }
 
-The most important thing about the `contents` option is the order in which
-you define the contents. The published book will be always composed of those
-contents and in that order. Therefore, the following configuration will
-output a book with  the cover between the two chapters and the table of
-contents at the very end (completely crazy, but really easy to do with
-**easybook**):
+La cosa più importante relativa all'opzione `content` è l'ordine in cui voi
+definite i conenuti. Il libro pubblicato conterrà sempre i contenuti nello
+stesso ordine. Ad esempio, la configurazione seguente, genererà un libro con
+la copertina tra i primi due capitoli e l'indice alla fine (complemtamente
+insensato, ma veramente semplice da fare con **easybook**):
 
     [yaml]
     book:
@@ -238,10 +238,13 @@ contents at the very end (completely crazy, but really easy to do with
             - { element: chapter, number: 2, content: publishing-your-second-book.md }
             - { element: toc   }
 
-By default, all content files are stored in the `Contents/` directory.
-However, if your book is complex, you can divide the contents into
-subdirectories. Then, include the name of the subdirectories in the `content`
-option  (don't forget to enclose it with quotes if the file path has spaces):
+Tutti i file dei contenuti sono archiviati, in maniera predefinita,
+all'interno delle cartella `Contents/`.
+
+Probabilmente, se il vostro libro ha una certa complessità, dividerete i
+contenuti in sotto cartelle, quindi neell'opzione `content` dovrete includere
+anche il nome delle sottocartelle (non dimenticatevi di racchiudere tra
+virgolette il percorso se contiene degli spazi):
 
     [yaml]
     book:
@@ -253,8 +256,8 @@ option  (don't forget to enclose it with quotes if the file path has spaces):
             - { element: chapter, number: 2, content: introduction/chapter2.md }
             - { element: chapter, number: 3, content: advanced/chapter1.md }
 
-The above configuration means that your book contents are distributed this
-way:
+La configurazione qui sopra indica che i contenuti del vostro libro sono
+distribuiti nella seguente maniera:
 
     <book_dir>/
         ...
