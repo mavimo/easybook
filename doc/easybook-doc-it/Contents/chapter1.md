@@ -73,10 +73,14 @@ messaggio:
       publish   Publishes an edition of a book
       version   Shows installed easybook version
 
-Se rilevate qualche problema nell'eseguire lo script `./book`, provate eseguendolo come `php book`. Se continuate ad avere problemi controllate i permessi dello script `book`. Se tutte le operazioni sopra indicate non risolvono il problema, chiedete ancora al vostro amico esperto di computer.
+Se rilevate qualche problema nell'eseguire lo script `./book`, provate
+eseguendolo come `php book`. Se continuate ad avere problemi controllate i
+permessi dello script `book`. Se tutte le operazioni sopra indicate non
+risolvono il problema, chiedete ancora al vostro amico esperto di computer.
 
 Lo script `./book` è l'unico *punto di ingresso* per ogni comando di
-**easybook**. Se vi serve saapere la versione installata, ad esempio, dovete semplcemente eseguire il comando `version` attraverso lo script `book`:
+**easybook**. Se vi serve saapere la versione installata, ad esempio, dovete
+semplcemente eseguire il comando `version` attraverso lo script `book`:
 
     [cli]
     $ ./book version
@@ -90,29 +94,30 @@ Lo script `./book` è l'unico *punto di ingresso* per ogni comando di
 
     easybook installed version: 4.2
 
-## Creating the book ##
+## Creare il libro ##
 
-In this section you will create your first **easybook** sample book. However,
-if you want to try **easybook** features as quickly as possible, you can use
-ready-made books named `easybook-doc-en` (English **easybook** documentation)
-and `easybook-doc-es` (Spanish **easybook** documentation). In that case, you
-can skip to the *Publishing the book* section.
+In questa sezione creerete il vostro primo libro di esempio con **easybook**.
+In alternativa, se volete provare **easybook** il più velocemente possibile,
+potete utilizzare i libri già pronti chiamati `easybook-doc-en` (la
+documentazione in inglese di **easybook**) e `easybook-doc-es` (la
+documentazione in spagnolo di **easybook**). In questo caso potete passare
+alla sezione *Pubblicare il libro*.
 
-**easybook** requires that your books follow a certain structure of archives
-and directories. To avoid creating this structure by hand, new books are
-bootstrapped with **easybook** `new` command:
+**easybook** richiede che i vostri libri seguano una certa struttura delle
+cartelle. Per creare questa struttura manualmente, i nuovi libri sono
+inizializzati con il comando `new` di **easybook**:
 
     [cli]
-    $ ./book new "The Origin of Species"
+    $ ./book new "L'origine delle specie"
 
-Type the title of your book after `new` command enclosing it with quotes. The
-result of this command is a new `the-origin-of-species` directory inside
-**easybook** `doc/` directory. Uou should see the following structure inside
-the new directory:
+Scrivendo il titolo del vostro libri dopo il comando `new` rachiuso tra
+virgolette. Il risultato di questo comando è una nuova cartella
+`l-origine-delle-specie` nella cartella `doc/` di **easybook**. Potete vedere
+la seguente struttura dentro la cartella:
 
     <easybook>/
         doc/
-            the-origin-of-species/
+            l-origine-delle-specie/
                 config.yml
                 Contents/
                     chapter1.md
@@ -120,17 +125,17 @@ the new directory:
                     images/
                 Output/
 
-These are the archives and directories created by **easybook**:
+Queste sono i file e le cartelle create da **easybook**:
 
-  * `config.yml`, this archive contains all the book configuration options.
-  We'll cover all of them in the next sections and chapters, but meanwhile
-  you can change the `author` option to set the book author's name (for
-  example, `Charles Darwin`).
-  * `Contents/`, this directory holds all the book contents (both text and
-  images). **easybook** creates two sample chapters (`chapter1.md` and
-  `chapter2.md`) and an empty `images/` directory.
-  * `Output/`, initially this directory is empty, but eventually it will
-  contain the published book.
+  * `config.yml`, questo file contiene tutte le opzioni di configurazione del
+    libro. Analizzeremo queste opzioni nelle prossime sezioni e capitoli, ma
+    probabilmente vorrete cambiare l'opzione `author` per impostare l'autore
+    del libro (ad esempio, `Charles Darwin`).
+  * `Contents/`, questa cartella contiene tutto il contenuti del libro (testo
+    e immagini). **easybook** crea due capitoli di esempio (`chapter1.md` e
+    `chapter2.md`) e una cartella `images/` vuota.
+  * `Output/`, inizialmente questa cartella è vuota, ma conterrà il libro
+    pubblicato.
 
 ## Writing the book ##
 
