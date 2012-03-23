@@ -279,43 +279,59 @@ libro):
     [cli]
     $ ./book publish l-origine-delle-specie web
 
-Se tutto funziona correttamente, potrete cedere una nuova cartella `web` dentro la cartella `Output/` e potrete trovarvi all'interno un file nominato `book.html`. Questo è il libro completo nel formato HTML, pronto per essere pubblicato in Internet.
+Se tutto funziona correttamente, potrete cedere una nuova cartella `web`
+dentro la cartella `Output/` e potrete trovarvi all'interno un file nominato
+`book.html`. Questo è il libro completo nel formato HTML, pronto per essere
+pubblicato in Internet.
 
 In seguito eseguite il seguente comando:
 
     [cli]
     $ ./book publish l-origine-delle-specie website
 
-Ora, dentro la cartella `Output/` potete trovare una nuova cartella `website` con diversi file HTML. Aprite `index.html` nel vostro browser e potete vedere che **easybook** ha pubblicato il vostro libro come un sito statico completamente funzionante.
+Ora, dentro la cartella `Output/` potete trovare una nuova cartella `website`
+con diversi file HTML. Aprite `index.html` nel vostro browser e potete vedere
+che **easybook** ha pubblicato il vostro libro come un sito statico
+completamente funzionante.
 
 Eseguite il seguente comando per generare un e-book:
 
     [cli]
     $ ./book publish l-origine-delle-specie ebook
 
-Nella cartella `Output/` del vostro libro potete trovare una nuova cartella `ebook` con un file nominato `ebook.epub`. Questa è la versione e-book del vostro libro, pronto per essere letto da qualsiasi dispositivo `.ePub` compatibile (tablet iPad, telefono iPhone, la maggior parte dei tablet e telefoni Android e ogni lettore di e-book eccetto Amazion Kindle).
+Nella cartella `Output/` del vostro libro potete trovare una nuova cartella
+`ebook` con un file nominato `ebook.epub`. Questa è la versione e-book del
+vostro libro, pronto per essere letto da qualsiasi dispositivo `.ePub`
+compatibile (tablet iPad, telefono iPhone, la maggior parte dei tablet e
+telefoni Android e ogni lettore di e-book eccetto Amazion Kindle).
 
 Infine, lanciate il seguente comando:
 
     [cli]
     $ ./book publish l-origine-delle-specie print
 
-Nella cartella `Output/` potrete trovare una nuova cartella `print` che contiene un file chiamato `book.pdf`. Aprite il nuovo file con il vostro lettore di PDF  e potrete vedere il vostro libro velocemente trasformato in un PDF piacevolmente impaginato. La conversione in PDF è realizzata attraverso un applicazione esterna chiamata [PrinceXML](http://www.princexml.com/).
+Nella cartella `Output/` potrete trovare una nuova cartella `print` che
+contiene un file chiamato `book.pdf`. Aprite il nuovo file con il vostro
+lettore di PDF  e potrete vedere il vostro libro velocemente trasformato in un
+PDF piacevolmente impaginato. La conversione in PDF è realizzata attraverso un
+applicazione esterna chiamata [PrinceXML](http://www.princexml.com/).
 
-Se non lo avete installato all'interno del vostro computer, potete scaricarne una versione completamente funzionante nella versione dimostrativa alla pagina <http://www.princexml.com/download/>
+Se non lo avete installato all'interno del vostro computer, potete scaricarne
+una versione completamente funzionante nella versione dimostrativa alla pagina
+<http://www.princexml.com/download/>
 
-**easybook**vi da la possibilità di pubblicare facilmente lo stesso libro in diversi modi. Ognuna di queste *modalità* è chiamata **edizione**. Questo concetto verrà appproondito nel prossimo capitolo.
+**easybook**vi da la possibilità di pubblicare facilmente lo stesso libro in
+diversi modi. Ognuna di queste *modalità* è chiamata **edizione**. Questo
+concetto verrà appproondito nel prossimo capitolo.
 
 
-## Book configuration options ##
+## Opzioni di configurazione del libro ##
 
-In the previous sections we've mentioned the `author` configuration option.
-In fact, **easybook** books can set many more options in the `config.yml` file
-. The default values of the options are as follows:
+Nella sezione precedente abbiamo menzionato l'opzione di configurazione `author`. In effetti, ééeasybook** ouò impostare molte opzioni per i libri all'interno del file `config.yml`. I valori predefiniti delle opzioni sono le seguenti:
 
     [yaml]
     book:
-        title:            "(the title typed when creating the book)"
+        title:            "(il nome inserito nella creazione del libro)"
         author:           "Change this: Author Name"
         edition:          "First edition"
         language:         en
@@ -343,26 +359,28 @@ In fact, **easybook** books can set many more options in the `config.yml` file
             website:
                 # (this is a complex option, we'll see it later)
 
-The `contents` and `editions` options are explained in  detail in the
-following chapters: `contents` option defines the book contents and their
-order; `editions` option defines the features of each edition of the book.
+Le opzioni `contents` ed `editions` sono spiegati nel dettaglio nei capitoli
+seguenti: l'opzione `contents` definisce il contenuti del libro ed il loro
+ordine; l'opzione `editions` definisce le caratteristiche per ogni edizione
+del libro.
 
-The other options set the basic information of the book:
+Le altre opzioni impostano alcune in formazioni di base del libro:
 
-  * `title`, is the title of the book. By default **easybook** uses the title
-  that you typed when creating the book, but you can change it if needed.
-  * `author`, is the name of the book author. If the book has multiple
-  authors, write them all in a row separated by commas:
-  `"Name1 Surname1, Name2 Surname2, ..."`
-  * `edition`, is the text describing the edition of the book. Normally, you
-  should use *first edition*, *second edition* and so on, but you can
-  describe your book current edition in any way.
-  * `language`, the language of the book contents set with a two letter code:
-  `en` for English, `es` for Spanish, `fr` for French, `it` for Italian, `de`
-  for Deutsch, etc.
-  * `publication_date`,  the date of publication of the book. The default
-  value is `~`, meaning no publication date. In this case, **easybook** will
-  automatically set the date to the day on which the book is published. If
-  you set a date, enter it in the `month-day-year` format. For example:
+  * `title`, è il titolo del libro. In maniera predefinita **easybook**
+  utilizza il titolo che avete inserito in fase di creazione del libro, ma
+  potete modificarlo se lo ritenete opportuno.
+  * `author`, è il nome dell'atore del libro. Se il libo ha più autori,
+  inseritli separati da una virgola:
+  `"Nome1 Cognome1, Nome1 Cognome2, ..."`
+  * `edition`, è il testo che descrive l'edizione del libro. Normalmente
+  inserirete *prima edizione*, *seconda edizione* e così via, ma potete
+  descrivere l'edizione del lvostro libro anche in qualsiasi altro modo.
+  * `language`, la lingua del contenuto del libro nel formato a due caratteri:
+  `en` per l'inglese, `es` per lo spagnolo, `fr` per il francese, `it`per
+  l'italiano, `de` per il tedesco, etc.
+  * `publication_date`, la data di pubblicazione del libro. Il valore
+  predefinito è `~`, che indica nessuna data di pubblicazione. In questo caso
+  **easybook** imposterà la data in maniera automatica alla data in cui il
+  libro è stato pubblicato. Se impostate la data, inseritela nelformato
+  `mese-anno-giorno`. ad esempio:
   `11-23-2012`.
-
