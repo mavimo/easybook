@@ -108,8 +108,8 @@ bootstrapped with **easybook** `new` command:
     $ ./book new "The Origin of Species"
 
 Type the title of your book after `new` command enclosing it with quotes. The
-result of this command is a new `the-origin-of-species` directory inside
-**easybook** `doc/` directory. Uou should see the following structure inside
+result of this command is a new`the-origin-of-species` directory inside
+**easybook** `doc/` directory. You should see the following structure inside
 the new directory:
 
     <easybook>/
