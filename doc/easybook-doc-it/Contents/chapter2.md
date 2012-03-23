@@ -1,9 +1,11 @@
-# Publishing your second book #
+# Pubblicare il vostro secondo libro #
 
-In the previous chapter, you learned how to create an publish a basic book with
-**easybook**. However, we didn't mention any of the more advanced features.
-This chapter explains all the available content types, how to master book
-editions and how to tweak its appearance using templates.
+Nel capitolo precedente avete imparato a creare e pubblicare un libro in
+maniera basilare usando **easybook**. Finora non abbiamo menzionato nessuna
+delle funzionalità avanzate. Questo capitolo spiegherà tutti i tipi di
+contenuto disponibili, come gestire le edizioni del libro e come modificarne
+la visualizzazione usando dei template.
+
 
 ## Content types ##
 
@@ -373,12 +375,12 @@ Images and tables are decorated with special templates called `figure.twig` and
 
 In addition to these properties, all the **easybook** templates have access to
 three global variables:
-  
+
   * `book`, provides direct access to the configuration options defined under
   `book` in `config.yml` file. You can access for example the book author in any
   template using `{{ book.author }}` and the current **easybook** version using
   `{{ book.generator.version }}`.
-  * `edition`, provides direct access to the configuration options of the edition 
+  * `edition`, provides direct access to the configuration options of the edition
   curently being published.
   * `app`, provides direct access to all configuration options and services of
   **easybook** (defined in the `src/DependencyInjection/Application.php` file).
