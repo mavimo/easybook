@@ -269,54 +269,43 @@ distribuiti nella seguente maniera:
                 chapter1.md
 
 
-## Publishing the book ##
+## Pubblicare il libro ##
 
-When you finish writing all the chapters and after adding them to the
-`config.yml` archive, run the following command to publish the book (replace
-`the-origin-of-the-species` by the name of your book directory):
-
-    [cli]
-    $ ./book publish the-origin-of-species web
-
-If everything works fine, you should see a new `web` directory inside
-`Output/` directory. Enter the `web/` directory and you'll find a file named
-`book.html`. This is the complete book in HTML format, ready to publish it on
-the Internet.
-
-Then, run the following command:
+Quanto avete finito di scrivere tutti i capitoli e dopo averli aggiunti al
+file `config.yml`, eseguite il seguente comando per pubblicare il libro
+(sostituite `l-origine-delle-specie` con il nome della certella del vostro
+libro):
 
     [cli]
-    $ ./book publish the-origin-of-species website
+    $ ./book publish l-origine-delle-specie web
 
-Now, inside `Output/` directory you'll find a new `website` directory with
-several HTML pages. Open `index.html` in your browser and you'll see that
-**easybook** has published your book as a fully-functional static website.
+Se tutto funziona correttamente, potrete cedere una nuova cartella `web` dentro la cartella `Output/` e potrete trovarvi all'interno un file nominato `book.html`. Questo è il libro completo nel formato HTML, pronto per essere pubblicato in Internet.
 
-Run the following command to generate an e-book:
+In seguito eseguite il seguente comando:
 
     [cli]
-    $ ./book publish the-origin-of-species ebook
+    $ ./book publish l-origine-delle-specie website
 
-Inside your book's `Output/` directory you'll find a new `ebook` directory
-with a file named `book.epub`. This is the e-book version of your book, ready
-to be read in any `.ePub` compatible reader (iPad tablets, iPhone phones,
-most Android tablets and phones and every e-book reader except Amazon Kindle).
+Ora, dentro la cartella `Output/` potete trovare una nuova cartella `website` con diversi file HTML. Aprite `index.html` nel vostro browser e potete vedere che **easybook** ha pubblicato il vostro libro come un sito statico completamente funzionante.
 
-Lastly, run the following command:
+Eseguite il seguente comando per generare un e-book:
 
     [cli]
-    $ ./book publish the-origin-of-species print
+    $ ./book publish l-origine-delle-specie ebook
 
-Inside `Output/` directory you'll find a new `print` directory which contains
-a file name `book.pdf`. Open the file with your PDF reader and you'll see
-your book as a beautiful and carefully created PDF ebook. The PDF conversion
-is made with an external application named [PrinceXML](http://www.princexml.com/).
-If you don't have it installed on your computer, you can download a
-fully-functional demo version at <http://www.princexml.com/download/>
+Nella cartella `Output/` del vostro libro potete trovare una nuova cartella `ebook` con un file nominato `ebook.epub`. Questa è la versione e-book del vostro libro, pronto per essere letto da qualsiasi dispositivo `.ePub` compatibile (tablet iPad, telefono iPhone, la maggior parte dei tablet e telefoni Android e ogni lettore di e-book eccetto Amazion Kindle).
 
-**easybook** lets you easily publish the same book in very different ways.
-Each of these *ways*  is called **edition**. This concept will be explained
-in the next chapter.
+Infine, lanciate il seguente comando:
+
+    [cli]
+    $ ./book publish l-origine-delle-specie print
+
+Nella cartella `Output/` potrete trovare una nuova cartella `print` che contiene un file chiamato `book.pdf`. Aprite il nuovo file con il vostro lettore di PDF  e potrete vedere il vostro libro velocemente trasformato in un PDF piacevolmente impaginato. La conversione in PDF è realizzata attraverso un applicazione esterna chiamata [PrinceXML](http://www.princexml.com/).
+
+Se non lo avete installato all'interno del vostro computer, potete scaricarne una versione completamente funzionante nella versione dimostrativa alla pagina <http://www.princexml.com/download/>
+
+**easybook**vi da la possibilità di pubblicare facilmente lo stesso libro in diversi modi. Ognuna di queste *modalità* è chiamata **edizione**. Questo concetto verrà appproondito nel prossimo capitolo.
+
 
 ## Book configuration options ##
 
