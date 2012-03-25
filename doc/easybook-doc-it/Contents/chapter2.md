@@ -7,10 +7,11 @@ contenuto disponibili, come gestire le edizioni del libro e come modificarne
 la visualizzazione usando dei template.
 
 
-## Content types ##
+## Tipi di contenuto ##
 
-Books define their contents with the `contents` options in the `config.yml` file.
-After creating a new book with the `new` command, the default contents are:
+I libri definiscono il loro contenuto con l'opzione `contents` nel file
+`config.yml`. Dopo aver creato un nuov libro con il comando `new`, il
+contenuto predefinito è:
 
     [yaml]
     book:
@@ -21,57 +22,59 @@ After creating a new book with the `new` command, the default contents are:
             - { element: chapter, number: 1, content: chapter1.md }
             - { element: chapter, number: 2, content: chapter2.md }
 
-The most important option of each content is `element`, which defines its
-content type. **easybook** currently supports 21 content types (the following
-definitions have been [copied from Wikipedia](http://en.wikipedia.org/wiki/Book_design)):
+L'opzione più importante di ogni contenuto è `element`, che definisce il suo
+tipo di contenuto. **easybook** attualmente supporta 21 tipi di contenuto (le
+sequenti definzioni sono [tratte da Wikipedia](http://en.wikipedia.org/wiki/Book_design)):
 
-  * `acknowledgement`, often part of the preface, rather than a separate section
-  in its own right. It acknowledges those who contributed to the creation of the
-  book.
-  * `afterword`, a piece of writing describing a time well after the time frame
-  of the main story of the book.
-  * `appendix`, is a supplemental addition to a given main work. It may correct
-  errors, explain inconsistencies or otherwise detail or update the information
-  found in the main content of the book.
-  * `author`, information about the book author/authors.
-  * `chapter`, the most used type in regular books.
-  * `conclusion`, the end of the book or document, where all of the pending
-  issues are resolved or where idea and thoughts are settled.
-  * `cover`, the cover of your book.
-  * `dedication`, a page that usually precedes the text, in which the author
-  names the person or people for whom he has written the book.
-  * `edition`, information about the current edition of the book, including the
-  publication date.
-  * `epilogue`, a piece of writing at the end of a work of literature or drama,
-  usually used to bring closure to the work.
-  * `foreword`, usually written by any person other than the author of the book.
-  It often tells of some interaction between the writer of the foreword and the
-  story or the writer of the story.
-  * `glossary`, consists of a set of definitions of words of importance to the
-  work, normally alphabetized.
-  * `introduction`, a beginning section which states the purpose and goals of
-  the following writing.
-  * `license`, information about the copyright holder or any other author/publisher
-  rights that affect the book.
-  * `lof` (*list of figures*),  is an ordered list of the book images and
-  illustrations, including their numbers and captions. The page in which the
-  image is included is also shown for `pdf` type editions.
-  * `lot` (*list of tables*),  is an ordered list of the book data tables,
-  including their numbers and captions. The page in which the table is included
-  is also shown for `pdf` type editions.
-  * `part`, used to group several related chapters or appendices.
-  * `preface`, generally covers the story of how the book came into being, or
-  how the idea for the book was developed.
-  * `prologue`, *written* by the narrator or any other character in the book.
-  It's an opening to a story that establishes the setting and gives background
-  details, often some earlier story that ties into the main one, and other
-  miscellaneous information.
-  * `title`, the page at or near the front which displays book title and author,
-  usually together with information relating to the publication of the book.
-  * `toc` (*table of contents*), a list of the parts of a book or document
-  organized in the order in which the parts appear.
+  * `acknowledgement`, spesso parte della prefazione, piuttosto che una parte
+  a se stante. Riconosce coloro che hanno contribuito alla creazione del libro.
+  * `afterword`, una parte di testo che descrive un intervallo di tempo
+  successivo al tempo principale in cui si svolge la storia del libro.
+  * `appendix`, è un aggiunta al contenuto principale del lavoro. Può
+  contenere corresioni, spiegazioni di inconsistenze, dettagli o aggiornamenti
+  delle informazioni che si trovano nel contenuto principale del libro.
+  * `author`, informazioni sull'autore/autori del libro.
+  * `chapter`, il ptipo più usato nei libri comuni.
+  * `conclusion`, la fine del libro o documento, dove tutti i punti non
+  chiari ci vengono presentati e chiariti o dove la tesi viene esposta.
+  * `cover`, la copertina del libro.
+  * `dedication`, una pagina che solitamente prcede il testo, in cui l'autore
+  ringrazia le persone che l'hanno aiutato a realizzare il libro.
+  * `edition`, informazioni relative all'edizione corrente del libro,
+  comprensive della data di pubblicaizione.
+  * `epilogue`, una parte del testo al termine del brano o dramma,
+  abitualmente utilizzato per concludere il lavoro.
+  * `foreword`, solitamente scritta da una persona differente dall'autore del
+  libro. Si racconta spesso di una certa interazione tra l'autore della
+  prefazione ed il contenuto del testo o tra lo scrittore e la storia.
+  * `glossary`, consiste in una serie di definizioni di parole importanti per
+  il contenuto del libro, solitamente in ordine alfabetico.
+  * `introduction`, una sezione introduttiva in cui si presentano i propositi
+  del testo a seguire.
+  * `license`, informazioni sui diritti d'autore dell'autore o di altri
+  autori/editori a cui il libro si attiene.
+  * `lof` (*elenco delle figure*), è una lista ordinata delle immagini ed
+  illustrazioni usate nel libro, comprensiva di numero e didascalia
+  dell'immagine. La pagina in cui l'immagine si trova è presentata
+  nell'edizione in `pdf`.
+  * `lot` (*elenco delle tabelle*), una lista ordinata delle tabelle inserite
+  all'interno del libro, comprensive del numero e disascalia. La pagina in cui
+  la tabella si trova è inclusa per le edizioni in `pdf`.
+  * `part`, utilizzata per raggruppare alcuni capitoli o appendici.
+  * `preface`, generalmente spiega come la storia narrata nel libro è iniziata
+  o l'idea dietro cuiè stato sviluppato il libro.
+  * `prologue`, *scritto* dal narratore o da un qualsiasi altro personaggio
+  del libro.
+  E' un'apertura della storia che stabilisce il contesto in cui ci si trova ed
+  alcuni dettagli, spesso qualche storia al contorno che si lega con quella
+  principale.
+  * `title`, la pagina iniziale che presenta il titolo e l'autore, solitamente
+  assieme alle informazioni di pubblicazione del libro.
+  * `toc` (*indice dei contenuti*), una lista delle parti del libro o
+  documento disposte enell'ordine in cui queste appaiono.
 
-Most of the content types don't require any other option besides `element`:
+La maggior parte dei tipi di contenuto non richiedono altre informazioni oltre
+`element`:
 
     [yaml]
     book:
@@ -87,25 +90,28 @@ Most of the content types don't require any other option besides `element`:
             - { element: author }
             - { element: acknowledgement }
 
-The `appendix` and `chapter` content types can define the following options:
+I tipi di contenuto `appendix` e `chapter` possono definire le seguenti
+opzioni:
 
-  * `number`, the number of the chapter or appendix. This value is used to
-  generate the labels of each section heading (`1.1`, `1.2`, `1.2.1`, `1.2.2`,
-  etc.) **easybook** doesn't restrict its format, so you can use Roman numerals
-  (`I.1`, `I.2`), letters (`A.1`, `A.2`) or any other symbol or string.
-  * `content`, the name of the file with the contents of this element. The file
-  name should include the extension (`.md` in the case of Markdown). The value
-  of this option is interpreted as the path from your book `Contents/` directory,
-  so you can add all the subdirectories you want.
+  * `number`, il numero del capitolo o appendice. Questo numero è utilizzato
+  per generare le numerazioni delle diverse sezioni (`1.1`, `1.2`, `1.2.1`,
+  `1.2.2`, etc.) **easybook** non si limita a questo formato, potete
+  utilizzare numeri romani (`I.1`, `I.2`), lettere (`A.1`, `A.2`) o qulsiasi
+  altro simbolo o stringa.
+  * `content`, il nome del file che contiene questo elemento. Il file deve
+  contenere l'estensione (`.md` nel caso di Markdown). Il valore di
+  quest'opzione è interpretato come percorso dalla cartella`Contents/` del
+  libro, quindi potete avere un numero qualsiasi di sottocartelle.
 
-The `part` content type also define the following option:
+Il tipo di contenuto `part` definisce la seguente opzione:
 
-  * `title`, the title of the part or section. In a printed book, a section is
-  shown as a page that separates chapters. In a web book, the section is shown
-  as a heading.
+  * `title`, il titolo della parte o sezione. In un libro stampato, una
+  sezione è visualizzata come una pagina che spara dei capitoli. In un libro
+  web, la sezione è mostrata come una testata.
 
-These 21 content types defined by **easybook** are enough to publish most books,
-but if you need it, the next chapter explains how to create new content types.
+Questi 21 tipi di contenuto definiti in **easybook** sono sufficienti a
+pubblicare la maggiorparte dei libri, ma se lo ritente necessario, il prossimo
+capitolo spiegherà come creare un nuovo tipo di contenuto.
 
 ## Editions ##
 
