@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Pubblicare il vostro secondo libro #
 
 Nel capitolo precedente avete imparato a creare e pubblicare un libro in
@@ -12,6 +13,19 @@ la visualizzazione usando dei template.
 I libri definiscono il loro contenuto con l'opzione `contents` nel file
 `config.yml`. Dopo aver creato un nuov libro con il comando `new`, il
 contenuto predefinito è:
+=======
+# Publishing your second book #
+
+In the previous chapter, you learned how to create an publish a basic book with
+**easybook**. However, we didn't mention any of the more advanced features.
+This chapter explains all the available content types, how to master book
+editions and how to tweak its appearance using templates.
+
+## Content types ##
+
+Books define their contents with the `contents` options in the `config.yml` file.
+After creating a new book with the `new` command, the default contents are:
+>>>>>>> 9ba9d3d5443cd5f61b8269d848ca8b9c77637539
 
     [yaml]
     book:
@@ -22,6 +36,7 @@ contenuto predefinito è:
             - { element: chapter, number: 1, content: chapter1.md }
             - { element: chapter, number: 2, content: chapter2.md }
 
+<<<<<<< HEAD
 L'opzione più importante di ogni contenuto è `element`, che definisce il suo
 tipo di contenuto. **easybook** attualmente supporta 21 tipi di contenuto (le
 sequenti definzioni sono [tratte da Wikipedia](http://en.wikipedia.org/wiki/Book_design)):
@@ -75,6 +90,59 @@ sequenti definzioni sono [tratte da Wikipedia](http://en.wikipedia.org/wiki/Book
 
 La maggior parte dei tipi di contenuto non richiedono altre informazioni oltre
 `element`:
+=======
+The most important option of each content is `element`, which defines its
+content type. **easybook** currently supports 21 content types (the following
+definitions have been [copied from Wikipedia](http://en.wikipedia.org/wiki/Book_design)):
+
+  * `acknowledgement`, often part of the preface, rather than a separate section
+  in its own right. It acknowledges those who contributed to the creation of the
+  book.
+  * `afterword`, a piece of writing describing a time well after the time frame
+  of the main story of the book.
+  * `appendix`, is a supplemental addition to a given main work. It may correct
+  errors, explain inconsistencies or otherwise detail or update the information
+  found in the main content of the book.
+  * `author`, information about the book author/authors.
+  * `chapter`, the most used type in regular books.
+  * `conclusion`, the end of the book or document, where all of the pending
+  issues are resolved or where idea and thoughts are settled.
+  * `cover`, the cover of your book.
+  * `dedication`, a page that usually precedes the text, in which the author
+  names the person or people for whom he has written the book.
+  * `edition`, information about the current edition of the book, including the
+  publication date.
+  * `epilogue`, a piece of writing at the end of a work of literature or drama,
+  usually used to bring closure to the work.
+  * `foreword`, usually written by any person other than the author of the book.
+  It often tells of some interaction between the writer of the foreword and the
+  story or the writer of the story.
+  * `glossary`, consists of a set of definitions of words of importance to the
+  work, normally alphabetized.
+  * `introduction`, a beginning section which states the purpose and goals of
+  the following writing.
+  * `license`, information about the copyright holder or any other author/publisher
+  rights that affect the book.
+  * `lof` (*list of figures*),  is an ordered list of the book images and
+  illustrations, including their numbers and captions. The page in which the
+  image is included is also shown for `pdf` type editions.
+  * `lot` (*list of tables*),  is an ordered list of the book data tables,
+  including their numbers and captions. The page in which the table is included
+  is also shown for `pdf` type editions.
+  * `part`, used to group several related chapters or appendices.
+  * `preface`, generally covers the story of how the book came into being, or
+  how the idea for the book was developed.
+  * `prologue`, *written* by the narrator or any other character in the book.
+  It's an opening to a story that establishes the setting and gives background
+  details, often some earlier story that ties into the main one, and other
+  miscellaneous information.
+  * `title`, the page at or near the front which displays book title and author,
+  usually together with information relating to the publication of the book.
+  * `toc` (*table of contents*), a list of the parts of a book or document
+  organized in the order in which the parts appear.
+
+Most of the content types don't require any other option besides `element`:
+>>>>>>> 9ba9d3d5443cd5f61b8269d848ca8b9c77637539
 
     [yaml]
     book:
@@ -90,6 +158,7 @@ La maggior parte dei tipi di contenuto non richiedono altre informazioni oltre
             - { element: author }
             - { element: acknowledgement }
 
+<<<<<<< HEAD
 I tipi di contenuto `appendix` e `chapter` possono definire le seguenti
 opzioni:
 
@@ -112,6 +181,27 @@ Il tipo di contenuto `part` definisce la seguente opzione:
 Questi 21 tipi di contenuto definiti in **easybook** sono sufficienti a
 pubblicare la maggiorparte dei libri, ma se lo ritente necessario, il prossimo
 capitolo spiegherà come creare un nuovo tipo di contenuto.
+=======
+The `appendix` and `chapter` content types can define the following options:
+
+  * `number`, the number of the chapter or appendix. This value is used to
+  generate the labels of each section heading (`1.1`, `1.2`, `1.2.1`, `1.2.2`,
+  etc.) **easybook** doesn't restrict its format, so you can use Roman numerals
+  (`I.1`, `I.2`), letters (`A.1`, `A.2`) or any other symbol or string.
+  * `content`, the name of the file with the contents of this element. The file
+  name should include the extension (`.md` in the case of Markdown). The value
+  of this option is interpreted as the path from your book `Contents/` directory,
+  so you can add all the subdirectories you want.
+
+The `part` content type also define the following option:
+
+  * `title`, the title of the part or section. In a printed book, a section is
+  shown as a page that separates chapters. In a web book, the section is shown
+  as a heading.
+
+These 21 content types defined by **easybook** are enough to publish most books,
+but if you need it, the next chapter explains how to create new content types.
+>>>>>>> 9ba9d3d5443cd5f61b8269d848ca8b9c77637539
 
 ## Editions ##
 
@@ -381,12 +471,20 @@ Images and tables are decorated with special templates called `figure.twig` and
 
 In addition to these properties, all the **easybook** templates have access to
 three global variables:
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> 9ba9d3d5443cd5f61b8269d848ca8b9c77637539
   * `book`, provides direct access to the configuration options defined under
   `book` in `config.yml` file. You can access for example the book author in any
   template using `{{ book.author }}` and the current **easybook** version using
   `{{ book.generator.version }}`.
+<<<<<<< HEAD
   * `edition`, provides direct access to the configuration options of the edition
+=======
+  * `edition`, provides direct access to the configuration options of the edition 
+>>>>>>> 9ba9d3d5443cd5f61b8269d848ca8b9c77637539
   curently being published.
   * `app`, provides direct access to all configuration options and services of
   **easybook** (defined in the `src/DependencyInjection/Application.php` file).

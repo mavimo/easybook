@@ -269,6 +269,7 @@ distribuiti nella seguente maniera:
                 chapter1.md
 
 
+<<<<<<< HEAD
 ## Pubblicare il libro ##
 
 Quanto avete finito di scrivere tutti i capitoli e dopo averli aggiunti al
@@ -332,6 +333,66 @@ Nella sezione precedente abbiamo menzionato l'opzione di configurazione `author`
     [yaml]
     book:
         title:            "(il nome inserito nella creazione del libro)"
+=======
+## Publishing the book ##
+
+When you finish writing all the chapters and after adding them to the
+`config.yml` archive, run the following command to publish the book (replace
+`the-origin-of-the-species` by the name of your book directory):
+
+    [cli]
+    $ ./book publish the-origin-of-species web
+
+If everything works fine, you should see a new `web` directory inside
+`Output/` directory. Enter the `web/` directory and you'll find a file named
+`book.html`. This is the complete book in HTML format, ready to publish it on
+the Internet.
+
+Then, run the following command:
+
+    [cli]
+    $ ./book publish the-origin-of-species website
+
+Now, inside `Output/` directory you'll find a new `website` directory with
+several HTML pages. Open `index.html` in your browser and you'll see that
+**easybook** has published your book as a fully-functional static website.
+
+Run the following command to generate an e-book:
+
+    [cli]
+    $ ./book publish the-origin-of-species ebook
+
+Inside your book's `Output/` directory you'll find a new `ebook` directory
+with a file named `book.epub`. This is the e-book version of your book, ready
+to be read in any `.ePub` compatible reader (iPad tablets, iPhone phones,
+most Android tablets and phones and every e-book reader except Amazon Kindle).
+
+Lastly, run the following command:
+
+    [cli]
+    $ ./book publish the-origin-of-species print
+
+Inside `Output/` directory you'll find a new `print` directory which contains
+a file name `book.pdf`. Open the file with your PDF reader and you'll see
+your book as a beautiful and carefully created PDF ebook. The PDF conversion
+is made with an external application named [PrinceXML](http://www.princexml.com/).
+If you don't have it installed on your computer, you can download a
+fully-functional demo version at <http://www.princexml.com/download/>
+
+**easybook** lets you easily publish the same book in very different ways.
+Each of these *ways*  is called **edition**. This concept will be explained
+in the next chapter.
+
+## Book configuration options ##
+
+In the previous sections we've mentioned the `author` configuration option.
+In fact, **easybook** books can set many more options in the `config.yml` file
+. The default values of the options are as follows:
+
+    [yaml]
+    book:
+        title:            "(the title typed when creating the book)"
+>>>>>>> 9ba9d3d5443cd5f61b8269d848ca8b9c77637539
         author:           "Change this: Author Name"
         edition:          "First edition"
         language:         en
@@ -359,6 +420,7 @@ Nella sezione precedente abbiamo menzionato l'opzione di configurazione `author`
             website:
                 # (this is a complex option, we'll see it later)
 
+<<<<<<< HEAD
 Le opzioni `contents` ed `editions` sono spiegati nel dettaglio nei capitoli
 seguenti: l'opzione `contents` definisce il contenuti del libro ed il loro
 ordine; l'opzione `editions` definisce le caratteristiche per ogni edizione
@@ -384,3 +446,28 @@ Le altre opzioni impostano alcune in formazioni di base del libro:
   libro è stato pubblicato. Se impostate la data, inseritela nelformato
   `mese-anno-giorno`. ad esempio:
   `11-23-2012`.
+=======
+The `contents` and `editions` options are explained in  detail in the
+following chapters: `contents` option defines the book contents and their
+order; `editions` option defines the features of each edition of the book.
+
+The other options set the basic information of the book:
+
+  * `title`, is the title of the book. By default **easybook** uses the title
+  that you typed when creating the book, but you can change it if needed.
+  * `author`, is the name of the book author. If the book has multiple
+  authors, write them all in a row separated by commas:
+  `"Name1 Surname1, Name2 Surname2, ..."`
+  * `edition`, is the text describing the edition of the book. Normally, you
+  should use *first edition*, *second edition* and so on, but you can
+  describe your book current edition in any way.
+  * `language`, the language of the book contents set with a two letter code:
+  `en` for English, `es` for Spanish, `fr` for French, `it` for Italian, `de`
+  for Deutsch, etc.
+  * `publication_date`,  the date of publication of the book. The default
+  value is `~`, meaning no publication date. In this case, **easybook** will
+  automatically set the date to the day on which the book is published. If
+  you set a date, enter it in the `month-day-year` format. For example:
+  `11-23-2012`.
+
+>>>>>>> 9ba9d3d5443cd5f61b8269d848ca8b9c77637539

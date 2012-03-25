@@ -27,7 +27,7 @@ way, even if you benefit from them financially.
 ## Downloading easybook ##
 
 Before downloading **easybook**, create a directory for it. For example:
-  
+
   * On Windows: `C:\Users\javier\projects\easybook`
   * On Mac OS X: `/Users/javier/projects/easybook`
   * On Linux: `/home/javier/projects/easybook`
@@ -56,9 +56,9 @@ If everything is fine, **easybook** should welcome you with the following
 message:
 
     [cli]
-                        |              |    
-    ,---.,---.,---.,   .|---.,---.,---.|__/ 
-    |---',---|`---.|   ||   ||   ||   ||  \ 
+                        |              |
+    ,---.,---.,---.,   .|---.,---.,---.|__/
+    |---',---|`---.|   ||   ||   ||   ||  \
     `---'`---^`---'`---|`---'`---'`---'`   `
                    `---'
 
@@ -84,9 +84,9 @@ command. If you need to know for example the installed version, just run the
     $ ./book version
 
 
-                        |              |    
-    ,---.,---.,---.,   .|---.,---.,---.|__/ 
-    |---',---|`---.|   ||   ||   ||   ||  \ 
+                        |              |
+    ,---.,---.,---.,   .|---.,---.,---.|__/
+    |---',---|`---.|   ||   ||   ||   ||  \
     `---'`---^`---'`---|`---'`---'`---'`   `
                    `---'
 
@@ -109,7 +109,7 @@ bootstrapped with **easybook** `new` command:
 
 Type the title of your book after `new` command enclosing it with quotes. The
 result of this command is a new `the-origin-of-species` directory inside
-**easybook** `doc/` directory. Uou should see the following structure inside
+**easybook** `doc/` directory. You should see the following structure inside
 the new directory:
 
     <easybook>/
@@ -131,7 +131,7 @@ These are the archives and directories created by **easybook**:
   * `Contents/`, this directory holds all the book contents (both text and
   images). **easybook** creates two sample chapters (`chapter1.md` and
   `chapter2.md`) and an empty `images/` directory.
-  * `Output/`, initially this directory is empty, but eventually it will 
+  * `Output/`, initially this directory is empty, but eventually it will
   contain the published book.
 
 ## Writing the book ##
@@ -354,20 +354,20 @@ order; `editions` option defines the features of each edition of the book.
 
 The other options set the basic information of the book:
 
-  * `title`, is the title of the book. By default **easybook** uses the title 
+  * `title`, is the title of the book. By default **easybook** uses the title
   that you typed when creating the book, but you can change it if needed.
-  * `author`, is the name of the book author. If the book has multiple 
+  * `author`, is the name of the book author. If the book has multiple
   authors, write them all in a row separated by commas:
   `"Name1 Surname1, Name2 Surname2, ..."`
-  * `edition`, is the text describing the edition of the book. Normally, you 
-  should use *first edition*, *second edition* and so on, but you can 
+  * `edition`, is the text describing the edition of the book. Normally, you
+  should use *first edition*, *second edition* and so on, but you can
   describe your book current edition in any way.
-  * `language`, the language of the book contents set with a two letter code: 
-  `en` for English, `es` for Spanish, `fr` for French, `it` for Italian, `de` 
+  * `language`, the language of the book contents set with a two letter code:
+  `en` for English, `es` for Spanish, `fr` for French, `it` for Italian, `de`
   for Deutsch, etc.
-  * `publication_date`,  the date of publication of the book. The default 
-  value is `~`, meaning no publication date. In this case, **easybook** will 
-  automatically set the date to the day on which the book is published. If 
+  * `publication_date`,  the date of publication of the book. The default
+  value is `~`, meaning no publication date. In this case, **easybook** will
+  automatically set the date to the day on which the book is published. If
   you set a date, enter it in the `month-day-year` format. For example:
   `11-23-2012`.
 
