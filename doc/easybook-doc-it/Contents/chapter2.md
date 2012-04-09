@@ -272,17 +272,17 @@ La sola limitazione di `extends` è che funziona con un unico livello di
 ereditarietà, pertanto un edizione non può estendere un altra edizione che ne
 estende una terza.
 
-## Themes ##
+## Temi ##
 
-A theme is a set of templates, stylesheets and other resources that define the
-visual design of the books. **easybook** already includes a theme for each
-edition type (`epub`, `pdf`, `html`, `html_chunked`), so your books will look
-professional without any effort.
+Un tema è un insieme di strutture, fogli di stile e altre risorse atte a
+definire l'aspetto grafico dei libri. **easybook** include già un tema per
+ogni tipo di edizione (`epub`, `pdf`, `html`, `html_chunked`), quindi i vostri
+libri saranno presentati in maniera professionale anche senza nessuno sforzo.
 
-Bundled themes are located in the `app/Resources/Themes/` directory. If you need
-to change the design of your books, **don't** modify the files in these
-directories. The next chapter explains how to easily override any template or
-resource for your book.
+I temi sono posizionati nella certalla `app/Resources/Themes/`.  Se avete
+necessità di modificare l'aspetto dei vostri libri **non** dovete modificare i
+file che si trovano in quste cartelle. Il prossimo capitolo spiegherà come
+sovrascrivere ogni struttura o risorsa per i vostri libri.
 
 ### Default contents ###
 
