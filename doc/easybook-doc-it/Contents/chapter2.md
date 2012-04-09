@@ -284,12 +284,13 @@ necessità di modificare l'aspetto dei vostri libri **non** dovete modificare i
 file che si trovano in quste cartelle. Il prossimo capitolo spiegherà come
 sovrascrivere ogni struttura o risorsa per i vostri libri.
 
-### Default contents ###
+### Contenuti predefiniti ###
 
-In most books, the only elements that define their own content are chapters and
-appendices (with the `content` option). In addition, **easybook** defines
-sensible default contents for some content types. If your book for example
-includes an inner cover (`title` content type) without any contents file:
+In molti libri gli unici elementi che vengono definiti sono capitoli e
+appendici (con l'opzione `content`). In aggiunta, **easybook** definisce dei
+contenuti predefiniti per alcuni tipi di contanuto. Se il vostro libro, per
+esempio, include una pagina iniziale (tipo di contenuto `title`) senza nessun
+file con contenuto:
 
     [yaml]
     book:
@@ -299,20 +300,20 @@ includes an inner cover (`title` content type) without any contents file:
             - { element: title }
             - ...
 
-**easybook** will use the following as the content for this element:
+**easybook** utilizzerà il seguente come contenuto per questo elemento:
 
     [twig]
     <h1>{{ book.title }}</h1>
     <h2>{{ book.author }}</h2>
     <h3>{{ book.edition }}</h3>
 
-The default title page shows the title, the name of the author and the current
-edition of the book. All these values are configured in the `book` option of
-`config.yml` file.
+La pagina del titolo predefinita mostrerà il titoolo, il nome dell'autore e
+l'edizione corrente del libro. Tutti qesti valori sono configurati
+nell'opzione `book` del file `config.yml`.
 
-The contents defined by **easybook** depend on both the edition being published
-and the content type. You can access these default contents on the `Contents/`
-directory of the theme.
+I contenuti definiti da **easybook** dipendono sia dal tipo di contenuto che
+dall'edizione in cui devono essere pubblicati. Potete accedere a questi valori
+predefiniti nella cartella  `Contents/` del tema.
 
 ### Custom contents ###
 
