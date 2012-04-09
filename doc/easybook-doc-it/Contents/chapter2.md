@@ -112,15 +112,15 @@ Questi 21 tipi di contenuto definiti in **easybook** sono sufficienti a
 pubblicare la maggiorparte dei libri, ma se lo ritente necessario, il prossimo
 capitolo spiegherà come creare un nuovo tipo di contenuto.
 
-## Editions ##
+## Edizioni ##
 
-**easybook** is so flexible it allows you to publish the very same book in
-radically different ways. This is possible thanks to the **editions**, that
-define the specific characteristics with which the book is published.
+**easybook** è suuficientemente flessibile da consentire di pubblicare lo
+stesso libro in differenti modalità. Questè p possibile grazie alle
+**edizioni**, che definiscono le caratteristiche in cui il libro è pubblicato.
 
-Editions are defined under the `editions` options in `config.yml` file. By
-default, the books created with the `new` command have four editions named
-`ebook`, `print`, `web` and `website` with the following options:
+Le edizioni sono definite sotto l'opzione `editions` nel file `config.yml`. In
+maniera predefinita, i libri creati con il comando `new`, hanno quttro
+edizioni nominate `ebook`, `print`, `web` e `website` con le seguenti opzioni:
 
     [yaml]
     book:
@@ -130,7 +130,7 @@ default, the books created with the `new` command have four editions named
                 format:         epub
                 highlight_code: false
                 include_styles: true
-                labels:         ['appendix', 'chapter']  # labels also available for: "figure", "table"
+                labels:         ['appendix', 'chapter']  # sono sisponibili anche le etichette: "figure", "table"
                 toc:
                     deep:       1
                     elements:   ["appendix", "chapter", "part"]
@@ -139,7 +139,7 @@ default, the books created with the `new` command have four editions named
                 format:         pdf
                 include_styles: true
                 isbn:           ~
-                labels:         ['appendix', 'chapter']  # labels also available for: 'figure', 'table'
+                labels:         ['appendix', 'chapter']  # sono sisponibili anche le etichette: 'figure', 'table'
                 margin:
                     top:        25mm
                     bottom:     25mm
@@ -155,7 +155,7 @@ default, the books created with the `new` command have four editions named
                 format:         html
                 highlight_code: true
                 include_styles: true
-                labels:         ['appendix', 'chapter']  # labels also available for: 'figure', 'table'
+                labels:         ['appendix', 'chapter']  # sono sisponibili anche le etichette: 'figure', 'table'
                 toc:
                     deep:       2
                     elements:   ["appendix", "chapter"]
@@ -164,71 +164,77 @@ default, the books created with the `new` command have four editions named
                 extends:        web
                 format:         html_chunked
 
-The name of each edition must be unique for the same book and cannot contain
-spaces.  The edition name is used as the subdirectory inside `Output/` directory
-to separate the contents of each edition. You can define as many editions as you
-need, but all must belong to one of the following four types defined by the
-`format` option:
+Il nome di ogni edizioni deve essere unico per lo stesso libro e non possono
+contenere spazi. I nomi delle edizioni sono usati come sottocartelle nella
+cartella `Output/` per separare i contenuti di ogni edizione. Potete definire
+tante edizioni quante ne ritenete necessarie, ma tutte devono appartenere a
+uno dei seguenti quattro tipi definiti nell'opzione `format`:
 
-  * `epub`, the book is published as an e-book named `book.epub`
-  * `pdf`, the book is published as a PDF file named `book.pdf`
-  * `html`, the book is published as a HTML page named `book.html`
-  * `html_chunked`, the book is published as a static website in a directory
-  named `book`
+  * `epub`, il libro verrà pubblicato come e-book chiamato `book.epub`
+  * `pdf`, il libro verrà pubblicato come PDF chiamato `book.pdf`
+  * `html`, il libro verrà pubblicato come pagina HTML chiamata `book.html`
+  * `html_chunked`, il libro verrà pubblicato come un sito statico nella
+  cartella chiamata `book`
 
-Editions can modify the aspect of the published book through several
-configuration options. The `epub`, `html` and `html_chunked` edition types share
-the same options:
+Le edizioni possono modificare l'aspetto del libro pubblicato attraverso
+diverse opzioni di configurazione. Le edizioni `epub`, `html` e `html_chunked`
+condividono le stesse opzioni:
 
-  * `highligh_code`, if `true` the syntax of the code listings is highlighted
-  (this option is a placeholder and it doesn't work for the momment).
-  * `include_styles`, if `true` **easybook** default CSS styles are applied.
-  * `labels`, indicates the content types for which **easybook** will add labels
-  to their section headings. By default labels are only added to headings of
-  chapters and appendices. In addition to **easybook** content types, you can
-  use two special values called `figure` and `table` to add labels for book
-  images and tables. If you want to show no labels in your book, delete all
-  values of this option: `labels: []`.
-  * `toc`, sets the options of the table of contents. It's ignored unless the
-  book has at least one `toc` element type. It has two options:
-    * `deep`, the maximum heading level included in the TOC (`1` is the lowest
-    possible number and would only show `<h1>` level headings; `6` is the
-    highest possible value and would show all `<h1>`, `<h2>`, `<h3>`, `<h4>`,
-    `<h5>` and `<h6>` headings).
-    * `elements`, the type of elements included in the TOC (by default, only
-    `appendix`, `chapter` and `part` are included).
+  * `highligh_code`, se `true` la sintassi del codice sarà evidenziata (questa
+  opzione è momentaneamente non funzionante).
+  * `include_styles`, se `true` gli stili CSS predefiniti di **easybook**
+  saranno applicati.
+  * `labels`, indica che i tipi di contenuto per cui **easybook** dovrà
+  aggiungere l'etichetta all'inizio. In maniera predefinita le etichette sono
+  aggiunte solo all'inizio dei capitoli e appendici. In aggiunta ai tipi di
+  contenuto di **easybook** potete usare due valori speciali denominati
+  `figure` e `table` per aggiungere le etichette alle immagini e alle tabelle
+  del libro. Se non volete mostrare etichette nel vostro libro, cancellate
+  tutti ii valori per questa opzione: `labels: []`.
+  * `toc`, imposta le opzioni per l'indice degli contenuti. Verrà ignorato a
+  meno che il libro contenga un elemento di tipo `toc`. HA due tipi di opzioni:
+    * `deep`, il massimo livello di profondità che deve essere incluso
+    nell'indice dei contenuti (`1` è il valore più piccolo consentito e
+    mostrerà solo il livello `<h1>`; `6` è il valore più alto consentito e
+    mostrerà i valori `<h1>`, `<h2>`, `<h3>`, `<h4>`, `<h5>` e `<h6>`).
+    * `elements`, il tipo di elementi inclusi nell'indie dei contenuti (in
+    maniera predefinita solo `appendix`, `chapter` e `part` saranno inclusi).
 
-The `pdf` editions can define even more options:
+Le edizioni `pdf` possono definire alcune opzioni aggiuntive:
 
-  * `isbn`, the ISBN-10 or ISBN-13 code of the book (this option is a placeholder
-  and it doesn't work for the momment).
-  * `include_styles`, if `true` **easybook** will define the layout, typesetting
-  and design of the book. Use this option to create stunning books effortlessly.
-  The next chapter will explain how to define your own styles.
-  * `labels`, it's the same option and has the same meaning as for the `epub`,
-  `html` and `html_chunked` editions.
-  * `margin`, sets the four margins of the printed book: `top`, `bottom`,
-  `inner` and `outter`. If the book is one-sided, `inner` equals left margin and
-  `outter` equals right margin. The values of the margins can be set with any
-  CSS valid lenght unit (`1in`, `25mm`, `2.5cm`).
-  * `page_size`, the page size of the printed book. **easybook** supports
-  [tens of page sizes](http://www.princexml.com/doc/7.1/page-size/) thanks to
-  PrinceXML: `US-Letter`, `US-Legal`, `crown-quarto`, `A4`, `A3`, etc.
-  * `toc`, it's the same option and has the same meaning as for the `epub`,
-  `html` and `html_chunked` editions
-  * `two_sided`, if `true` the PDF file is ready for two-sided printing.
+  * `isbn`, il codice ISBN-10 o ISBN-13 del libro (questa opzione non è
+  funzionante al momento).
+  * `include_styles`, se `true` **easybook** definirà la struttura della
+  pagina, le impoztaioni dei caratteri e l'aspetto grafico del libro. Usare
+  quest'opzione per creare libri graficamente ben strutturati con basso sforzo.
+  Il prossimo capitolo spiegherà come definire dei propri stili.
+  * `labels`, è la stessa opzione che abbiamo visto per le edizioni `epub`,
+  `html` e `html_chunked`.
+  * `margin`, imposta i quattro margini del libro stampato: `top`, `bottom`,
+  `inner` and `outter`. Se il libro ha pagine su un solo lato, `inner`
+  corrisponde al margine sinistro e `outter` al margine destro. Il valore dei
+  margini può essere impostato con ogni unità di misura vlide nei CSS (`1in`,
+  `25mm`, `2.5cm`).
+  * `page_size`, la dimensione della pagina del libro stampato. **easybook**
+  supporta [decine di foramti pagina](http://www.princexml.com/doc/7.1/page-size/)
+  grazie a PrinceXML: `US-Letter`, `US-Legal`, `crown-quarto`, `A4`, `A3`, etc.
+  * `toc`,  è la stessa opzione che abbiamo visto per le edizioni `epub`,
+  `html` e `html_chunked`.
+  * `two_sided`, se `true` il file PDF sarà preparato per essere stamapato su
+  due pagine affiancate.
 
-In addition to all these options, editions can set a very useful option named
-`extends`. The value of this option indicates the name of the edition from which
-this edition *inherits*. When an edition *inherits* from another edition, the
-options of the parent edition are copied on the *heir* edition, which can then
-override any value.
+In aggiunta a tutte queste opzioni, le edizioni possono avere un opzione
+estremamente utile chiamata `extends`. Il valore di questa pzionie indica il
+nome dell'edizione da qui l'edizione corrente *eredita*. Quando un edizione
+*eredita* da un altra, le opzioni dell'edizione padre sono copiate
+nell'edizione *corrente*, da cui ppoi possono essere sovrascritte.
 
-Imagine for example you want to publish one PDF book with three slightly
-different designs. The draft version (`draft`) must be double-sided and must
-have very small margins to reduce its length, the normal version (`print`) is
-one-sided and has normal margins. The version prepared for lulu.com website
-(`lulu`) is similar to the normal version, except is double-sided:
+Immaginaiamo, per esempio, che vogliamo pubblicare un PDF con tre formati
+grafici differenti. La versione di bozza (`draft`) deve essere stampata su due
+pagine e deve avere dei margini molto piccoli per ridurne la lunghezza, la
+versione normale (`print`) è su una sola pagina ee ha dei margini normali. La
+versione preparata per lulu.com (`lulu`) è simile alla versione normale,
+tranne che è stampata fronte-retro:
 
     [yaml]
     book:
@@ -237,7 +243,7 @@ one-sided and has normal margins. The version prepared for lulu.com website
             print:
                 format:       pdf
                 isbn:         ~
-                labels:       ['appendix', 'chapter']  # labels also available for: 'figure', 'table'
+                labels:       ['appendix', 'chapter']  # etichette disponibili anche per: 'figure', 'table'
                 margin:
                     top:      25mm
                     bottom:   25mm
@@ -262,8 +268,9 @@ one-sided and has normal margins. The version prepared for lulu.com website
                 extends:      print
                 two_sided:    true
 
-The only limitation of `extends` is that it only works with one level inheritance.
-Therefore, and edition cannot extend another edition that extends a third one.
+La sola limitazione di `extends` è che funziona con un unico livello di
+ereditarietà, pertanto un edizione non può estendere un altra edizione che ne
+estende una terza.
 
 ## Themes ##
 
