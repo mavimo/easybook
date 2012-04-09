@@ -315,10 +315,11 @@ I contenuti definiti da **easybook** dipendono sia dal tipo di contenuto che
 dall'edizione in cui devono essere pubblicati. Potete accedere a questi valori
 predefiniti nella cartella  `Contents/` del tema.
 
-### Custom contents ###
+### Contenuti predefiniti ###
 
-If you don't want to use **easybook** default contents for some element, simply
-add the `content` option indicating the file that defines its contents:
+Se non volete usare i contenuti predefiniti di **easybook** per alcuni
+elementi, aggiungete semplicemente l'opzione `content` che indica il file che
+definisce questo contenuti:
 
     [yaml]
     book:
